@@ -1,150 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MauriServices</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body class="bg-white text-gray-800">
-    <!-- Header -->
-    <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
-  <h1 class="text-2xl font-bold text-green-600"
-      data-text-en="MauriServices"
-      data-text-fr="MauriServices">
-    MauriServices
-  </h1>
-  <nav>
-    <ul class="flex gap-6 text-green-700 font-medium">
-      <li><a href="#about" data-text-en="About" data-text-fr="À propos">About</a></li>
-      <li><a href="#services" data-text-en="Services" data-text-fr="Services">Services</a></li>
-      <li><a href="#contact" data-text-en="Contact" data-text-fr="Contact">Contact</a></li>
-      <li><button id="toggleLang" class="bg-green-600 text-white px-3 py-1 rounded">FR</button></li>
-    </ul>
-  </nav>
-</header>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MauriServices</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <style>
+    body.rtl {
+      font-family: 'Cairo', sans-serif;
+      text-align: right;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+  <header class="bg-green-600 text-white px-4 py-3 flex justify-between items-center">
+    <h1 class="text-2xl font-bold" data-text-en="MauriServices" data-text-fr="MauriServices" data-text-ar="موري سيرفيسز">MauriServices</h1>
+    <select id="languageSelector" class="bg-white text-green-600 px-2 py-1 rounded">
+      <option value="en">EN</option>
+      <option value="fr">FR</option>
+      <option value="ar">AR</option>
+    </select>
+  </header>
 
-
-    <!-- Hero -->
-    <section class="text-center py-20 px-4 bg-green-50" data-aos="fade-down">
-      <h2 class="text-4xl font-bold mb-4" data-text-en="Empowering Local Services in Mauritania" data-text-fr="Numérisation des services locaux en Mauritanie">
-        Empowering Local Services in Mauritania
+  <main class="p-6 space-y-12">
+    <!-- Hero Section -->
+    <section class="text-center">
+      <h2 class="text-3xl font-bold text-green-600 mb-4"
+        data-text-en="🌍 MauriServices"
+        data-text-fr="🌍 MauriServices"
+        data-text-ar="🌍 موري سيرفيسز">
+        🌍 MauriServices
       </h2>
-      <p class="text-lg max-w-2xl mx-auto" data-text-en="MauriServices is a platform helping you access local services like food delivery, beauty care, and healthcare, all in one place." data-text-fr="MauriServices est une plateforme qui vous aide à accéder aux services locaux comme la livraison de repas, les soins de beauté et la santé, le tout en un seul endroit.">
-        MauriServices is a platform helping you access local services like food delivery, beauty care, and healthcare, all in one place.
+      <p class="text-gray-700 max-w-2xl mx-auto"
+        data-text-en="MauriServices is a web and mobile-friendly platform designed to digitize local services in Mauritania."
+        data-text-fr="MauriServices est une plateforme web et mobile conçue pour numériser les services locaux en Mauritanie."
+        data-text-ar="موري سيرفيسز هي منصة ويب وموبايل تهدف إلى رقمنة الخدمات المحلية في موريتانيا.">
+        MauriServices is a web and mobile-friendly platform...
       </p>
     </section>
 
-    <!-- About -->
-    <section id="about" class="py-16 px-4 max-w-5xl mx-auto" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-green-600" data-text-en="About Us" data-text-fr="À propos de nous">
-        About Us
-      </h2>
-      <p class="text-lg" data-text-en="MauriServices is a web and mobile platform designed to digitize local services in Mauritania. From restaurants to professionals like doctors and barbers — users can book and order easily." data-text-fr="MauriServices est une plateforme web et mobile conçue pour numériser les services locaux en Mauritanie. Des restaurants aux professionnels comme les médecins et les coiffeurs — les utilisateurs peuvent réserver et commander facilement.">
-        MauriServices is a web and mobile platform designed to digitize local services in Mauritania. From restaurants to professionals like doctors and barbers — users can book and order easily.
-      </p>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="py-16 px-4 bg-green-50" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-10 text-green-600 text-center" data-text-en="Our Modules" data-text-fr="Nos Modules">
-        Our Modules
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-lg">
-        <div data-aos="fade-right">
-          <h3 class="font-semibold text-xl mb-2">MauriEats</h3>
-          <p data-text-en="Search for restaurants, view menus, and place orders." data-text-fr="Recherchez des restaurants, consultez les menus et passez des commandes.">
-            Search for restaurants, view menus, and place orders.
-          </p>
-        </div>
-        <div data-aos="fade-left">
-          <h3 class="font-semibold text-xl mb-2">MauriBeauty</h3>
-          <p data-text-en="Book appointments with local beauty professionals (hairdressers, barbers, spa etc.)." data-text-fr="Prenez rendez-vous avec des professionnels de la beauté locaux (coiffeurs, barbiers, spa, etc.).">
-            Book appointments with local beauty professionals (hairdressers, barbers, spa etc.).
-          </p>
-        </div>
-        <div data-aos="fade-right">
-          <h3 class="font-semibold text-xl mb-2">MauriHealth</h3>
-          <p data-text-en="Book appointments with local health professionals (doctors, dentists, etc.)." data-text-fr="Prenez rendez-vous avec des professionnels de santé locaux (médecins, dentistes, etc.).">
-            Book appointments with local health professionals (doctors, dentists, etc.).
-          </p>
-        </div>
-        <div data-aos="fade-left">
-          <h3 class="font-semibold text-xl mb-2">MauriServices</h3>
-          <p data-text-en="Book appointments with local service providers (plumbers, electricians, etc.)." data-text-fr="Prenez rendez-vous avec des prestataires de services locaux (plombiers, électriciens, etc.).">
-            Book appointments with local service providers (plumbers, electricians, etc.).
-          </p>
-        </div>
+    <!-- Modules Section -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold text-green-600"
+            data-text-en="MauriEats"
+            data-text-fr="MauriEats"
+            data-text-ar="ماوري إيتس">MauriEats</h3>
+        <p data-text-en="Search for restaurants, view menus, and place orders."
+           data-text-fr="Recherchez des restaurants, consultez les menus et passez des commandes."
+           data-text-ar="ابحث عن مطاعم، اعرض القوائم، واطلب عبر الإنترنت.">
+           Search for restaurants, view menus, and place orders.
+        </p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold text-green-600"
+            data-text-en="MauriBeauty"
+            data-text-fr="MauriBeauty"
+            data-text-ar="ماوري بيوتي">MauriBeauty</h3>
+        <p data-text-en="Book appointments with local beauty professionals."
+           data-text-fr="Prenez rendez-vous avec des professionnels de la beauté."
+           data-text-ar="احجز مواعيد مع خبراء التجميل المحليين.">
+           Book appointments with local beauty professionals.
+        </p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold text-green-600"
+            data-text-en="MauriHealth"
+            data-text-fr="MauriHealth"
+            data-text-ar="ماوري هيلث">MauriHealth</h3>
+        <p data-text-en="Book appointments with local health professionals."
+           data-text-fr="Prenez rendez-vous avec des professionnels de santé."
+           data-text-ar="احجز مواعيد مع أطباء أو مختصين صحيين.">
+           Book appointments with local health professionals.
+        </p>
+      </div>
+      <div class="p-4 bg-white rounded shadow">
+        <h3 class="font-semibold text-green-600"
+            data-text-en="MauriServices"
+            data-text-fr="MauriServices"
+            data-text-ar="موري سيرفيسز">MauriServices</h3>
+        <p data-text-en="Book appointments with service providers."
+           data-text-fr="Prenez rendez-vous avec des prestataires de services."
+           data-text-ar="احجز مواعيد مع مقدمي الخدمات المحليين.">
+           Book appointments with service providers.
+        </p>
       </div>
     </section>
 
-    <!-- Contact -->
-  <section id="contact" class="py-16 px-4 max-w-4xl mx-auto" data-aos="fade-up">
-  <h2 class="text-3xl font-bold mb-6 text-green-600"
-      data-text-en="Contact Us"
-      data-text-fr="Contactez-nous">
-    Contact Us
-  </h2>
-  <form class="space-y-4">
-    <input type="text" class="w-full border px-4 py-2 rounded"
-           placeholder="Your Name"
-           data-text-en="Your Name"
-           data-text-fr="Votre nom" />
-    <input type="email" class="w-full border px-4 py-2 rounded"
-           placeholder="Your Email"
-           data-text-en="Your Email"
-           data-text-fr="Votre email" />
-    <textarea rows="5" class="w-full border px-4 py-2 rounded"
-              placeholder="Your Message"
-              data-text-en="Your Message"
-              data-text-fr="Votre message"></textarea>
-    <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
-            data-text-en="Send"
-            data-text-fr="Envoyer">
-      Send
-    </button>
-  </form>
-</section>
+    <!-- Contact Section -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4 text-green-600"
+          data-text-en="Contact Us"
+          data-text-fr="Contactez-nous"
+          data-text-ar="اتصل بنا">
+        Contact Us
+      </h2>
+      <form class="space-y-4">
+        <input type="text" class="w-full p-2 border rounded" placeholder="Your Name"
+               data-text-en="Your Name" data-text-fr="Votre nom" data-text-ar="اسمك">
+        <input type="email" class="w-full p-2 border rounded" placeholder="Your Email"
+               data-text-en="Your Email" data-text-fr="Votre email" data-text-ar="بريدك الإلكتروني">
+        <textarea class="w-full p-2 border rounded" placeholder="Your Message"
+                  data-text-en="Your Message" data-text-fr="Votre message" data-text-ar="رسالتك"></textarea>
+        <button class="bg-green-600 text-white px-4 py-2 rounded"
+                data-text-en="Send" data-text-fr="Envoyer" data-text-ar="إرسال">
+          Send
+        </button>
+      </form>
+    </section>
+  </main>
 
+  <footer class="bg-green-600 text-white text-center p-4 mt-12">
+    <p data-text-en="© 2025 MauriServices. All rights reserved."
+       data-text-fr="© 2025 MauriServices. Tous droits réservés."
+       data-text-ar="© 2025 موري سيرفيسز. جميع الحقوق محفوظة.">
+       © 2025 MauriServices. All rights reserved.
+    </p>
+  </footer>
 
-    <!-- Footer -->
-  <footer class="bg-gray-100 py-6 mt-12 text-center text-sm text-gray-600">
-  <p data-text-en="© 2025 MauriServices. All rights reserved."
-     data-text-fr="© 2025 MauriServices. Tous droits réservés.">
-    © 2025 MauriServices. All rights reserved.
-  </p>
-</footer>
+  <script>
+    const langSelector = document.getElementById("languageSelector");
+    langSelector.addEventListener("change", (e) => {
+      const lang = e.target.value;
 
+      document.querySelectorAll("[data-text-en]").forEach((el) => {
+        const newText = el.getAttribute(`data-text-${lang}`);
+        if (!newText) return;
 
-    <!-- Scripts -->
- <script>
-  AOS.init();
+        if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+          el.setAttribute("placeholder", newText);
+        } else {
+          el.textContent = newText;
+        }
+      });
 
-  const toggleBtn = document.getElementById("toggleLang");
-  let currentLang = "en";
-
-  toggleBtn.addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "fr" : "en";
-    toggleBtn.textContent = currentLang === "en" ? "FR" : "EN";
-
-    document.querySelectorAll("[data-text-en]").forEach((el) => {
-      const newText = el.getAttribute(`data-text-${currentLang}`);
-      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-        el.setAttribute("placeholder", newText);
-      } else {
-        el.textContent = newText;
-      }
+      document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+      document.body.classList.toggle("rtl", lang === "ar");
     });
-  });
-</script>
-
-
-  </body>
+  </script>
+</body>
 </html>
