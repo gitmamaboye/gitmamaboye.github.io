@@ -1,180 +1,120 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MauriServices</title>
-
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- AOS for scroll animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#16a34a', // green-600
-            },
-          },
-        },
-      };
-    </script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
-
-  <body class="bg-gray-50 text-gray-900 font-sans">
+  <body class="bg-white text-gray-800">
     <!-- Header -->
-    <header class="bg-primary text-white shadow-md">
+    <header class="bg-green-600 text-white shadow sticky top-0 z-50">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold">MauriServices</h1>
-        <div>
-          <button
-            onclick="switchLang('en')"
-            class="text-white hover:underline mx-2"
-          >
-            EN
-          </button>
-          <button
-            onclick="switchLang('fr')"
-            class="text-white hover:underline mx-2"
-          >
+        <h1 class="text-xl font-bold">🌍 MauriServices</h1>
+        <nav class="space-x-4">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#services" class="hover:underline">Services</a>
+          <a href="#contact" class="hover:underline">Contact</a>
+          <button id="toggleLang" class="bg-white text-green-600 px-2 py-1 rounded text-sm font-medium">
             FR
           </button>
-        </div>
+        </nav>
       </div>
     </header>
 
-  <!-- About Section -->
-<section class="max-w-5xl mx-auto px-4 py-12" data-aos="fade-up" id="about">
-  <h2
-    class="text-3xl font-bold text-primary mb-6"
-    data-text-en="🌍 MauriServices"
-    data-text-fr="🌍 MauriServices"
-  >
-    🌍 MauriServices
-  </h2>
-  <p
-    class="text-lg text-gray-800 mb-6"
-    data-text-en="MauriServices is a web and mobile-friendly platform designed to digitize local services in Mauritania. It allows users to order food from nearby restaurants and book appointments with various local professionals (doctors, dentists, barbers, garages, etc.) via a unified, accessible interface."
-    data-text-fr="MauriServices est une plateforme adaptée au web et au mobile conçue pour numériser les services locaux en Mauritanie. Elle permet aux utilisateurs de commander de la nourriture auprès de restaurants locaux et de prendre des rendez-vous avec divers professionnels (médecins, dentistes, coiffeurs, garages, etc.) via une interface unifiée et accessible."
-  >
-    MauriServices is a web and mobile-friendly platform designed to digitize
-    local services in Mauritania. It allows users to order food from nearby
-    restaurants and book appointments with various local professionals
-    (doctors, dentists, barbers, garages, etc.) via a unified, accessible
-    interface.
-  </p>
+    <!-- Hero -->
+    <section class="text-center py-20 px-4 bg-green-50" data-aos="fade-down">
+      <h2 class="text-4xl font-bold mb-4" data-text-en="Empowering Local Services in Mauritania" data-text-fr="Numérisation des services locaux en Mauritanie">
+        Empowering Local Services in Mauritania
+      </h2>
+      <p class="text-lg max-w-2xl mx-auto" data-text-en="MauriServices is a platform helping you access local services like food delivery, beauty care, and healthcare, all in one place." data-text-fr="MauriServices est une plateforme qui vous aide à accéder aux services locaux comme la livraison de repas, les soins de beauté et la santé, le tout en un seul endroit.">
+        MauriServices is a platform helping you access local services like food delivery, beauty care, and healthcare, all in one place.
+      </p>
+    </section>
 
-  <h3
-    class="text-xl font-semibold text-primary mb-4"
-    data-text-en="Modules"
-    data-text-fr="Modules"
-  >
-    Modules
-  </h3>
-
-  <ul class="list-disc list-inside space-y-2 text-gray-700 text-lg">
-    <li
-      data-text-en="MauriEats: Search for restaurants, view menus, and place orders."
-      data-text-fr="MauriEats : Recherchez des restaurants, consultez les menus et passez des commandes."
-    >
-      MauriEats: Search for restaurants, view menus, and place orders.
-    </li>
-    <li
-      data-text-en="MauriBeauty: Book appointments with local beauty professionals (hairdressers, barbers, spa etc.)."
-      data-text-fr="MauriBeauty : Prenez rendez-vous avec des professionnels de la beauté locaux (coiffeurs, barbiers, spa, etc.)."
-    >
-      MauriBeauty: Book appointments with local beauty professionals
-      (hairdressers, barbers, spa etc.).
-    </li>
-    <li
-      data-text-en="MauriHealth: Book appointments with local health professionals (doctors, dentists, etc.)."
-      data-text-fr="MauriHealth : Prenez rendez-vous avec des professionnels de santé locaux (médecins, dentistes, etc.)."
-    >
-      MauriHealth: Book appointments with local health professionals (doctors,
-      dentists, etc.).
-    </li>
-    <li
-      data-text-en="MauriServices: Book appointments with local service providers (plumbers, electricians, etc.)."
-      data-text-fr="MauriServices : Prenez rendez-vous avec des prestataires de services locaux (plombiers, électriciens, etc.)."
-    >
-      MauriServices: Book appointments with local service providers (plumbers,
-      electricians, etc.).
-    </li>
-  </ul>
-</section>
-
+    <!-- About -->
+    <section id="about" class="py-16 px-4 max-w-5xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6 text-green-600" data-text-en="About Us" data-text-fr="À propos de nous">
+        About Us
+      </h2>
+      <p class="text-lg" data-text-en="MauriServices is a web and mobile platform designed to digitize local services in Mauritania. From restaurants to professionals like doctors and barbers — users can book and order easily." data-text-fr="MauriServices est une plateforme web et mobile conçue pour numériser les services locaux en Mauritanie. Des restaurants aux professionnels comme les médecins et les coiffeurs — les utilisateurs peuvent réserver et commander facilement.">
+        MauriServices is a web and mobile platform designed to digitize local services in Mauritania. From restaurants to professionals like doctors and barbers — users can book and order easily.
+      </p>
+    </section>
 
     <!-- Services -->
-    <section class="max-w-5xl mx-auto px-4 py-12 space-y-8" id="services">
-      <div data-aos="fade-up">
-        <h3
-          class="text-2xl font-semibold mb-4"
-          data-text-en="Available Modules"
-          data-text-fr="Modules disponibles"
-        >
-          Available Modules
-        </h3>
-        <ul class="list-disc list-inside text-primary text-lg space-y-2">
-          <li>
-            <a href="#" class="hover:underline"
-              >Eats - Food delivery</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="hover:underline"
-              >Beauty - Wellness & Spa</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="hover:underline"
-              >Sales - Retail & Offers</a
-            >
-          </li>
-        </ul>
+    <section id="services" class="py-16 px-4 bg-green-50" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-10 text-green-600 text-center" data-text-en="Our Modules" data-text-fr="Nos Modules">
+        Our Modules
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto text-lg">
+        <div data-aos="fade-right">
+          <h3 class="font-semibold text-xl mb-2">MauriEats</h3>
+          <p data-text-en="Search for restaurants, view menus, and place orders." data-text-fr="Recherchez des restaurants, consultez les menus et passez des commandes.">
+            Search for restaurants, view menus, and place orders.
+          </p>
+        </div>
+        <div data-aos="fade-left">
+          <h3 class="font-semibold text-xl mb-2">MauriBeauty</h3>
+          <p data-text-en="Book appointments with local beauty professionals (hairdressers, barbers, spa etc.)." data-text-fr="Prenez rendez-vous avec des professionnels de la beauté locaux (coiffeurs, barbiers, spa, etc.).">
+            Book appointments with local beauty professionals (hairdressers, barbers, spa etc.).
+          </p>
+        </div>
+        <div data-aos="fade-right">
+          <h3 class="font-semibold text-xl mb-2">MauriHealth</h3>
+          <p data-text-en="Book appointments with local health professionals (doctors, dentists, etc.)." data-text-fr="Prenez rendez-vous avec des professionnels de santé locaux (médecins, dentistes, etc.).">
+            Book appointments with local health professionals (doctors, dentists, etc.).
+          </p>
+        </div>
+        <div data-aos="fade-left">
+          <h3 class="font-semibold text-xl mb-2">MauriServices</h3>
+          <p data-text-en="Book appointments with local service providers (plumbers, electricians, etc.)." data-text-fr="Prenez rendez-vous avec des prestataires de services locaux (plombiers, électriciens, etc.).">
+            Book appointments with local service providers (plumbers, electricians, etc.).
+          </p>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="bg-gray-100 py-12 px-4" data-aos="fade-up" id="contact">
-      <div class="max-w-5xl mx-auto text-center">
-        <h3
-          class="text-2xl font-semibold mb-2"
-          data-text-en="Get in Touch"
-          data-text-fr="Contactez-nous"
-        >
-          Get in Touch
-        </h3>
-        <p class="text-gray-700 text-lg">
-          <span class="text-primary">contact@mauriservices.online</span>
-        </p>
-      </div>
+    <section id="contact" class="py-16 px-4 max-w-4xl mx-auto" data-aos="fade-up">
+      <h2 class="text-3xl font-bold mb-6 text-green-600" data-text-en="Contact Us" data-text-fr="Contactez-nous">
+        Contact Us
+      </h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Your Name" class="w-full border px-4 py-2 rounded" />
+        <input type="email" placeholder="Your Email" class="w-full border px-4 py-2 rounded" />
+        <textarea rows="5" placeholder="Your Message" class="w-full border px-4 py-2 rounded"></textarea>
+        <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+          Send
+        </button>
+      </form>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-6">
-      <div class="max-w-5xl mx-auto px-4 text-center text-sm">
-        &copy; 2025 MauriServices. All rights reserved.
-      </div>
+    <footer class="bg-green-600 text-white py-6 text-center">
+      <p>&copy; 2025 MauriServices. All rights reserved.</p>
     </footer>
 
     <!-- Scripts -->
     <script>
       AOS.init();
+      const toggleBtn = document.getElementById("toggleLang");
+      let currentLang = "en";
 
-      function switchLang(lang) {
+      toggleBtn.addEventListener("click", () => {
+        currentLang = currentLang === "en" ? "fr" : "en";
+        toggleBtn.textContent = currentLang === "en" ? "FR" : "EN";
         document.querySelectorAll("[data-text-en]").forEach((el) => {
-          const text = el.getAttribute(`data-text-${lang}`);
-          if (text) el.textContent = text;
+          el.textContent = el.dataset[`text${currentLang.toUpperCase()}`];
         });
-      }
+      });
     </script>
   </body>
 </html>
