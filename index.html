@@ -1,59 +1,142 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MauriServices - Home</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MauriServices</title>
 
-  <header class="bg-green-600 text-white py-6 shadow-md">
-    <div class="max-w-5xl mx-auto px-4">
-      <h1 class="text-4xl font-bold tracking-tight">MauriServices</h1>
-      <p class="mt-1 text-blue-200">Your modular services platform</p>
-    </div>
-  </header>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <main class="max-w-5xl mx-auto px-4 py-12">
-    <section class="mb-12">
-      <h2 class="text-3xl font-semibold mb-4">Welcome</h2>
-      <p class="mb-6 text-lg text-gray-700">
-        Explore our growing ecosystem of services:
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#16a34a', // green-600
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="bg-primary text-white shadow-md">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">MauriServices</h1>
+        <div>
+          <button
+            onclick="switchLang('en')"
+            class="text-white hover:underline mx-2"
+          >
+            EN
+          </button>
+          <button
+            onclick="switchLang('fr')"
+            class="text-white hover:underline mx-2"
+          >
+            FR
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="bg-white py-20 px-6 text-center"
+      data-aos="fade-up"
+      id="hero"
+    >
+      <h2
+        class="text-4xl font-bold text-primary mb-4"
+        data-text-en="Welcome to MauriServices"
+        data-text-fr="Bienvenue chez MauriServices"
+      >
+        Welcome to MauriServices
+      </h2>
+      <p
+        class="text-lg text-gray-700"
+        data-text-en="Your modular platform for everyday services"
+        data-text-fr="Votre plateforme modulaire pour les services quotidiens"
+      >
+        Your modular platform for everyday services
       </p>
-      <ul class="list-disc list-inside space-y-3 text-green-600">
-        <li>
-          <a href="https://eats.mauriservices.online" target="_blank" rel="noopener noreferrer" class="hover:underline">
-            Eats - Food delivery
-          </a>
-        </li>
-        <li>
-          <a href="https://beauty.mauriservices.online" target="_blank" rel="noopener noreferrer" class="hover:underline">
-            Beauty - Salon &amp; wellness
-          </a>
-        </li>
-        <li>
-          <a href="https://sales.mauriservices.online" target="_blank" rel="noopener noreferrer" class="hover:underline">
-            Sales - Retail &amp; offers
-          </a>
-        </li>
-      </ul>
     </section>
 
-    <section>
-      <h3 class="text-2xl font-semibold mb-3">Contact</h3>
-      <p class="text-gray-700 text-lg">
-        Email us at
-        <a href="mailto:contact@mauriservices.online" class="text-green-600 hover:underline">
-          contact@mauriservices.online
-        </a>
-      </p>
+    <!-- Services -->
+    <section class="max-w-5xl mx-auto px-4 py-12 space-y-8" id="services">
+      <div data-aos="fade-up">
+        <h3
+          class="text-2xl font-semibold mb-4"
+          data-text-en="Available Modules"
+          data-text-fr="Modules disponibles"
+        >
+          Available Modules
+        </h3>
+        <ul class="list-disc list-inside text-primary text-lg space-y-2">
+          <li>
+            <a href="https://eats.mauriservices.online" class="hover:underline"
+              >Eats - Food delivery</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://beauty.mauriservices.online"
+              class="hover:underline"
+              >Beauty - Wellness & Spa</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://sales.mauriservices.online"
+              class="hover:underline"
+              >Sales - Retail & Offers</a
+            >
+          </li>
+        </ul>
+      </div>
     </section>
-  </main>
 
-  <footer class="border-t border-gray-200 py-6 text-center text-gray-500 text-sm">
-    &copy; 2025 MauriServices. All rights reserved.
-  </footer>
+    <!-- Contact -->
+    <section class="bg-gray-100 py-12 px-4" data-aos="fade-up" id="contact">
+      <div class="max-w-5xl mx-auto text-center">
+        <h3
+          class="text-2xl font-semibold mb-2"
+          data-text-en="Get in Touch"
+          data-text-fr="Contactez-nous"
+        >
+          Get in Touch
+        </h3>
+        <p class="text-gray-700 text-lg">
+          contact@
+          <span class="text-primary">mauriservices.online</span>
+        </p>
+      </div>
+    </section>
 
-</body>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-6">
+      <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+        &copy; 2025 MauriServices. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      AOS.init();
+
+      function switchLang(lang) {
+        document.querySelectorAll("[data-text-en]").forEach((el) => {
+          const text = el.getAttribute(`data-text-${lang}`);
+          if (text) el.textContent = text;
+        });
+      }
+    </script>
+  </body>
 </html>
