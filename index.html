@@ -15,19 +15,22 @@
   </head>
   <body class="bg-white text-gray-800">
     <!-- Header -->
-    <header class="bg-green-600 text-white shadow sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-xl font-bold">🌍 MauriServices</h1>
-        <nav class="space-x-4">
-          <a href="#about" class="hover:underline">About</a>
-          <a href="#services" class="hover:underline">Services</a>
-          <a href="#contact" class="hover:underline">Contact</a>
-          <button id="toggleLang" class="bg-white text-green-600 px-2 py-1 rounded text-sm font-medium">
-            FR
-          </button>
-        </nav>
-      </div>
-    </header>
+    <header class="bg-white shadow-md py-4 px-6 flex justify-between items-center">
+  <h1 class="text-2xl font-bold text-green-600"
+      data-text-en="MauriServices"
+      data-text-fr="MauriServices">
+    MauriServices
+  </h1>
+  <nav>
+    <ul class="flex gap-6 text-green-700 font-medium">
+      <li><a href="#about" data-text-en="About" data-text-fr="À propos">About</a></li>
+      <li><a href="#services" data-text-en="Services" data-text-fr="Services">Services</a></li>
+      <li><a href="#contact" data-text-en="Contact" data-text-fr="Contact">Contact</a></li>
+      <li><button id="toggleLang" class="bg-green-600 text-white px-3 py-1 rounded">FR</button></li>
+    </ul>
+  </nav>
+</header>
+
 
     <!-- Hero -->
     <section class="text-center py-20 px-4 bg-green-50" data-aos="fade-down">
@@ -83,27 +86,45 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-16 px-4 max-w-4xl mx-auto" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-green-600" data-text-en="Contact Us" data-text-fr="Contactez-nous">
-        Contact Us
-      </h2>
-      <form class="space-y-4">
-        <input type="text" placeholder="Your Name" class="w-full border px-4 py-2 rounded" />
-        <input type="email" placeholder="Your Email" class="w-full border px-4 py-2 rounded" />
-        <textarea rows="5" placeholder="Your Message" class="w-full border px-4 py-2 rounded"></textarea>
-        <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
-          Send
-        </button>
-      </form>
-    </section>
+  <section id="contact" class="py-16 px-4 max-w-4xl mx-auto" data-aos="fade-up">
+  <h2 class="text-3xl font-bold mb-6 text-green-600"
+      data-text-en="Contact Us"
+      data-text-fr="Contactez-nous">
+    Contact Us
+  </h2>
+  <form class="space-y-4">
+    <input type="text" class="w-full border px-4 py-2 rounded"
+           placeholder="Your Name"
+           data-text-en="Your Name"
+           data-text-fr="Votre nom" />
+    <input type="email" class="w-full border px-4 py-2 rounded"
+           placeholder="Your Email"
+           data-text-en="Your Email"
+           data-text-fr="Votre email" />
+    <textarea rows="5" class="w-full border px-4 py-2 rounded"
+              placeholder="Your Message"
+              data-text-en="Your Message"
+              data-text-fr="Votre message"></textarea>
+    <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
+            data-text-en="Send"
+            data-text-fr="Envoyer">
+      Send
+    </button>
+  </form>
+</section>
+
 
     <!-- Footer -->
-    <footer class="bg-green-600 text-white py-6 text-center">
-      <p>&copy; 2025 MauriServices. All rights reserved.</p>
-    </footer>
+  <footer class="bg-gray-100 py-6 mt-12 text-center text-sm text-gray-600">
+  <p data-text-en="© 2025 MauriServices. All rights reserved."
+     data-text-fr="© 2025 MauriServices. Tous droits réservés.">
+    © 2025 MauriServices. All rights reserved.
+  </p>
+</footer>
+
 
     <!-- Scripts -->
-  <script>
+ <script>
   AOS.init();
 
   const toggleBtn = document.getElementById("toggleLang");
@@ -113,7 +134,6 @@
     currentLang = currentLang === "en" ? "fr" : "en";
     toggleBtn.textContent = currentLang === "en" ? "FR" : "EN";
 
-    // Update inner text for elements
     document.querySelectorAll("[data-text-en]").forEach((el) => {
       const newText = el.getAttribute(`data-text-${currentLang}`);
       if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
@@ -124,6 +144,7 @@
     });
   });
 </script>
+
 
   </body>
 </html>
