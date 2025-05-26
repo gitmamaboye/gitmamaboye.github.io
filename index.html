@@ -103,18 +103,27 @@
     </footer>
 
     <!-- Scripts -->
-    <script>
-      AOS.init();
-      const toggleBtn = document.getElementById("toggleLang");
-      let currentLang = "en";
+  <script>
+  AOS.init();
 
-      toggleBtn.addEventListener("click", () => {
-        currentLang = currentLang === "en" ? "fr" : "en";
-        toggleBtn.textContent = currentLang === "en" ? "FR" : "EN";
-        document.querySelectorAll("[data-text-en]").forEach((el) => {
-          el.textContent = el.dataset[`text${currentLang.toUpperCase()}`];
-        });
-      });
-    </script>
+  const toggleBtn = document.getElementById("toggleLang");
+  let currentLang = "en";
+
+  toggleBtn.addEventListener("click", () => {
+    currentLang = currentLang === "en" ? "fr" : "en";
+    toggleBtn.textContent = currentLang === "en" ? "FR" : "EN";
+
+    // Update inner text for elements
+    document.querySelectorAll("[data-text-en]").forEach((el) => {
+      const newText = el.getAttribute(`data-text-${currentLang}`);
+      if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+        el.setAttribute("placeholder", newText);
+      } else {
+        el.textContent = newText;
+      }
+    });
+  });
+</script>
+
   </body>
 </html>
